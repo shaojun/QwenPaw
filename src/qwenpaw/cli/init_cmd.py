@@ -200,7 +200,7 @@ def init_cmd(
     ensure_default_agent_exists()
     migrate_legacy_skills_to_skill_pool()
     click.echo("✓ Default workspace initialized")
-    ensure_qa_agent_exists()
+    # ensure_qa_agent_exists()
     click.echo("✓ Builtin QA agent workspace ensured")
 
     # --- Ensure local skill hub exists ---

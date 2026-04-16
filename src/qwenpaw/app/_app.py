@@ -248,7 +248,7 @@ async def lifespan(
     migrate_legacy_workspace_to_default_agent()
     ensure_default_agent_exists()
     migrate_legacy_skills_to_skill_pool()
-    ensure_qa_agent_exists()
+    # ensure_qa_agent_exists()
 
     # --- Multi-agent manager initialization ---
     logger.info("Initializing MultiAgentManager...")
