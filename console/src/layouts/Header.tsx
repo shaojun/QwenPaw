@@ -21,6 +21,8 @@ import { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { CopyOutlined, CheckOutlined, TagOutlined } from "@ant-design/icons";
+import quamingLogoDark from "../assets/quaming-logo-dark.svg";
+import quamingLogoLight from "../assets/quaming-logo-light.svg";
 
 const { Header: AntHeader } = Layout;
 
@@ -154,12 +156,8 @@ export default function Header() {
       <AntHeader className={styles.header}>
         <div className={styles.logoWrapper}>
           <img
-            src={
-              isDark
-                ? `https://gw.alicdn.com/imgextra/i4/O1CN01L7e39724RlGeJYJ7l_!!6000000007388-55-tps-771-132.svg`
-                : "https://gw.alicdn.com/imgextra/i1/O1CN01sens5C1TuwioeGexL_!!6000000002443-55-tps-771-132.svg"
-            }
-            alt="QwenPaw"
+            src={isDark ? quamingLogoDark : quamingLogoLight}
+            alt="quaming logo"
             className={styles.logoImg}
           />
           <div className={styles.logoDivider} />
@@ -183,36 +181,38 @@ export default function Header() {
           )}
         </div>
         <Space size="middle">
-          <Tooltip title={t("header.changelog")}>
-            <Button
-              type="text"
-              onClick={() => handleNavClick(getReleaseNotesUrl(i18n.language))}
-            >
-              {t("header.changelog")}
-            </Button>
-          </Tooltip>
-          <Tooltip title={t("header.docs")}>
-            <Button
-              type="text"
-              onClick={() => handleNavClick(getDocsUrl(i18n.language))}
-            >
-              {t("header.docs")}
-            </Button>
-          </Tooltip>
-          <Tooltip title={t("header.faq")}>
-            <Button
-              type="text"
-              onClick={() => handleNavClick(getFaqUrl(i18n.language))}
-            >
-              {t("header.faq")}
-            </Button>
-          </Tooltip>
-          <Tooltip title={t("header.github")}>
-            <Button type="text" onClick={() => handleNavClick(GITHUB_URL)}>
-              {t("header.github")}
-            </Button>
-          </Tooltip>
-          <div className={styles.headerDivider} />
+          <Space size="middle" style={{ display: "none" }}>
+            <Tooltip title={t("header.changelog")}>
+              <Button
+                type="text"
+                onClick={() => handleNavClick(getReleaseNotesUrl(i18n.language))}
+              >
+                {t("header.changelog")}
+              </Button>
+            </Tooltip>
+            <Tooltip title={t("header.docs")}>
+              <Button
+                type="text"
+                onClick={() => handleNavClick(getDocsUrl(i18n.language))}
+              >
+                {t("header.docs")}
+              </Button>
+            </Tooltip>
+            <Tooltip title={t("header.faq")}>
+              <Button
+                type="text"
+                onClick={() => handleNavClick(getFaqUrl(i18n.language))}
+              >
+                {t("header.faq")}
+              </Button>
+            </Tooltip>
+            <Tooltip title={t("header.github")}>
+              <Button type="text" onClick={() => handleNavClick(GITHUB_URL)}>
+                {t("header.github")}
+              </Button>
+            </Tooltip>
+            <div className={styles.headerDivider} />
+          </Space>
           <LanguageSwitcher />
           <ThemeToggleButton />
         </Space>

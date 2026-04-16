@@ -26,6 +26,7 @@ import { IconButton } from "@agentscope-ai/design";
 import ChatActionGroup from "./components/ChatActionGroup";
 import ChatHeaderTitle from "./components/ChatHeaderTitle";
 import ChatSessionInitializer from "./components/ChatSessionInitializer";
+import quamingAvatar from "../../assets/quaming-avatar.svg";
 import {
   toDisplayUrl,
   copyText,
@@ -800,9 +801,8 @@ export default function ChatPage() {
       },
       welcome: {
         ...i18nConfig.welcome,
-        nick: "QwenPaw",
-        avatar:
-          "https://gw.alicdn.com/imgextra/i2/O1CN01pyXzjQ1EL1PuZMlSd_!!6000000000334-2-tps-288-288.png",
+        nick: "qua-assistant",
+        avatar: quamingAvatar,
       },
       sender: {
         ...(i18nConfig as any)?.sender,
